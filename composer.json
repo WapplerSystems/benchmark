@@ -1,0 +1,14 @@
+{
+    "name": "wapplersystems/benchmark",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "doctrine/orm": "^2.8",
+        "phpbench/phpbench": "^0.17.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "WapplerSystems\\Benchmark\\": "src",
+            "WapplerSystems\\Benchmark\\Tests\\": "Tests"
+        }
+    }
+}

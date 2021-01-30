@@ -1,0 +1,9 @@
+<?php
+
+$mysqlParams = [
+    'driver'   => 'pdo_mysql',
+    'user'     => 'db',
+    'password' => 'db',
+    'dbname'   => 'db',
+    'host'     => 'db',
+];
