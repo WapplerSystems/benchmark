@@ -7,6 +7,7 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\ORM\Tools\Setup;
+use PhpBench\Benchmark\Metadata\Annotations\Iterations;
 use PhpBench\Benchmark\Metadata\Annotations\Revs;
 use WapplerSystems\Benchmark\Entities\House;
 
@@ -53,7 +54,7 @@ class MySQLBench
     }
 
     /**
-     * @Revs(1000)
+     * @Iterations(30)
      * @throws \Doctrine\ORM\ORMException
      * @throws \Doctrine\ORM\OptimisticLockException
      */
@@ -65,6 +66,13 @@ class MySQLBench
         $employee->setName('test');
         $entityManager->persist($employee);
         $entityManager->flush();
+    }
+
+    public function benchSelect()
+    {
+        $entityManager = self::getDatabaseConnection();
+
+
 
     }
 }
