@@ -7,14 +7,14 @@ class ImageMagickBench
     /**
      * @Iterations(5)
      */
-    public function benchResize() //resize benchmark
+    public function benchResizeIM() //resize benchmark
     {
         $output = null;
         $retval = null;
 
         exec('convert data/test.jpg -resize 50% test_$i.jpg;rm test_*.jpg', $output, $retval);
         if ($retval != 0) {
-            print "there was an error during resize benchmark\n";
+            print "there was an error during ImageMagick resize benchmark\n";
             print "error code: $retval\n";
             print_r($output);
         }
@@ -23,14 +23,14 @@ class ImageMagickBench
     /**
      * @Iterations(5)
      */
-    public function benchCompression() //compression benchmark
+    public function benchCompressionIM() //compression benchmark
     {
         $output = null;
         $retval = null;
 
         exec('convert data/test.jpg -strip -interlace Plane -gaussian-blur 0.05 -quality 60% test_2.jpg;rm test_*.jpg', $output, $retval);
         if ($retval != 0) {
-            print "there was an error during compression benchmark";
+            print "there was an error during ImageMagick compression benchmark";
             print "error code: $retval\n";
             print_r($output);
         }
