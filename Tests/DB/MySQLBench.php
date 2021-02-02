@@ -47,7 +47,7 @@ class MySQLBench
 
         include_once __DIR__ . '/../../config/db.config.php';
 
-        $config = Setup::createConfiguration(false);
+        $config = Setup::createConfiguration(true);
         $driver = new AnnotationDriver(new AnnotationReader(), [__DIR__ . '/../../src/Entities']);
         $config->setMetadataDriverImpl($driver);
 
